@@ -1,8 +1,14 @@
+import { Route , Switch , Redirect } from "react-router-dom"
 
-function App() {
+import AllQuote from "./pages/allQuote"
+import QuoteDetail from "./pages/quoteDetail"
+import NewQuote from "./pages/newQuote"
+import NotFound from "./pages/notFound"
+
+const App = () => {
   return (
     <>
-        <h1>Hello world</h1>
+        
     </>
   )
 }
