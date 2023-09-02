@@ -37,12 +37,12 @@ const QuoteForm = ({onGetData}) => {
 
                 <div className = 'text-center w-full'>
                     <label htmlFor = "author">Author</label>
-                    <input type = "text" id = "author" ref = {inputRef} onChange = {inputChangeHandler} className = 'rounded-lg m-2 p-3 w-6/12 px-5 outline-none text-sm' autoComplete = 'off'/>
+                    <input type = "text" id = "author" onChange = {inputChangeHandler} className = 'rounded-lg m-2 p-3 w-6/12 px-5 outline-none text-sm' autoComplete = 'off'/>
                 </div>
 
                 <div className = 'w-full text-center flex flex-wrap justify-center items-start'>
                     <label htmlFor = "author">Text</label>
-                    <textarea id = "text" rows = "7" cols = "24" ref = {textAreaRef} onChange = {textAreaChangeHandler} className = 'outline-none resize-none w-6/12 ml-5 p-4 text-sm rounded-lg'></textarea>
+                    <textarea id = "text" rows = "7" cols = "24" onChange = {textAreaChangeHandler} className = 'outline-none resize-none w-6/12 ml-5 p-4 text-sm rounded-lg'></textarea>
                 </div>
 
                 <div className = 'text-center'>
