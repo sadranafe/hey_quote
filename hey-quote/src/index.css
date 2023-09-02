@@ -5,3 +5,23 @@
 *{
     font-family: 'Josefin Sans';
 }
+
+.bg-1{
+    background-color: #ece8c8;
+}
+
+.bg-2{
+    background-color: #CCD5AE;
+}
+
+.bg-3{
+    background-color: #424B54;
+}
+
+.bg-4{
+    background-color: #E9EDC9;
+}
+
+.txt-1{
+    color: #FEFAE0;
+}

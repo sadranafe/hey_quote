@@ -11,11 +11,11 @@ const MainNavBar = () => {
 
                     <div className = "flex flex-wrap justify-center items-center">
                         <div className = "mx-2">
-                            <NavLink to = "/quotes" className = "bg-2 capitalize p-2 pb-3 rounded-lg font-medium" activeClassName = "text-white bg-3">all quotes</NavLink>
+                            <NavLink to = "/quotes" className = "bg-2 capitalize p-2 rounded-lg font-medium" activeClassName = "text-white bg-3">all quotes</NavLink>
                         </div>
 
                         <div className = "mx-2">
-                            <NavLink to = "/new-quote" className = "bg-2 capitalize p-2 pb-3 rounded-lg font-medium" activeClassName = "text-white bg-3">add a  quote</NavLink>
+                            <NavLink to = "/new-quote" className = "bg-2 capitalize p-2 rounded-lg font-medium" activeClassName = "text-white bg-3">add a  quote</NavLink>
                         </div>
                     </div>
                 
