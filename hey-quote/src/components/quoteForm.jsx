@@ -1,6 +1,7 @@
 import { useRef } from "react";
 
-const QuoteForm = () => {
+const QuoteForm = ({onGetData}) => {
+    
     const inputRef = useRef();
     const textAreaRef = useRef();
 
@@ -14,6 +15,8 @@ const QuoteForm = () => {
             text : enteredTextAreaValue,
             time : new Date()
         }
+
+        onGetData(enteredData)
 
     }
 

@@ -5,12 +5,16 @@ import QuoteDetail from "./pages/quoteDetail"
 import NewQuote from "./pages/newQuote"
 import NotFound from "./pages/notFound"
 import MainNavBar from "./components/mainNavBar"
+import { useState } from "react"
 
 const App = () => {
-  const DUMMY_DATA = [
-    {id : 1 , author : "sadra" , text : "Learning ReactJS is aweSome!"},
-    {id : 2 , author : "Max" , text : "Learning NextJS is Great!"},
-  ]
+  const [DUMMY_DATA , setDUMMY_DATA] = useState([])
+
+  const DUMMY_DATA_Handler = data => {
+    setDUMMY_DATA(prevState => {
+      return ([...prevState , data])
+    })
+  }
 
   return (
     <>
@@ -23,7 +27,7 @@ const App = () => {
             </Route>
 
             <Route path = "/new-quote">
-                <NewQuote/>
+                <NewQuote onDUMMY_DATA = {DUMMY_DATA_Handler}/>
             </Route>
 
             <Route path = "/quotes/:quoteId">
