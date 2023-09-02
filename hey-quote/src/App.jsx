@@ -4,12 +4,15 @@ import AllQuote from "./pages/allQuote"
 import QuoteDetail from "./pages/quoteDetail"
 import NewQuote from "./pages/newQuote"
 import NotFound from "./pages/notFound"
+import MainNavBar from "./components/mainNavBar"
 
 const App = () => {
   return (
     <>
+      <MainNavBar/>
+
         <Switch>
-            <Redirect from = "/" to = "/quotes"/>
+            <Redirect from = "/" to = "/quotes" exact/>
             <Route path = "/quotes" exact>
                 <AllQuote/>
             </Route>
