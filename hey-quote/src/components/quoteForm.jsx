@@ -1,23 +1,31 @@
-import { useRef } from "react";
+import { useState } from "react";
+import {useHistory} from "react-router-dom"
 
 const QuoteForm = ({onGetData}) => {
-    
-    const inputRef = useRef();
-    const textAreaRef = useRef();
+    const history = useHistory()
+
+    const [enteredInputValue , setEnteredInputValue] = useState("")
+    const [enteredTextAreaValue , setEnteredTextAreaValue] = useState("")
+    const formIsValid = enteredInputValue.trim() !== "" && enteredTextAreaValue.trim() !== "";
+
+    const inputChangeHandler = ev => {
+        setEnteredInputValue(ev.target.value)
+    }
+
+    const textAreaChangeHandler = ev => {
+        setEnteredTextAreaValue(ev.target.value)
+    }
 
     const formHandler = ev => {
         ev.preventDefault();
-        const enteredInputValue = inputRef.current.value
-        const enteredTextAreaValue = textAreaRef.current.value
+        history.push("/quotes")
 
         const enteredData = {
             author : enteredInputValue,
             text : enteredTextAreaValue,
             time : new Date()
         }
-
         onGetData(enteredData)
-
     }
 
     return (
@@ -29,16 +37,16 @@ const QuoteForm = ({onGetData}) => {
 
                 <div className = 'text-center w-full'>
                     <label htmlFor = "author">Author</label>
-                    <input type = "text" id = "author" ref = {inputRef} className = 'rounded-lg m-2 p-3 w-6/12 px-5 outline-none text-sm' autoComplete = 'off'/>
+                    <input type = "text" id = "author" ref = {inputRef} onChange = {inputChangeHandler} className = 'rounded-lg m-2 p-3 w-6/12 px-5 outline-none text-sm' autoComplete = 'off'/>
                 </div>
 
                 <div className = 'w-full text-center flex flex-wrap justify-center items-start'>
                     <label htmlFor = "author">Text</label>
-                    <textarea id = "text" rows = "7" cols = "24" ref = {textAreaRef} className = 'outline-none resize-none w-6/12 ml-5 p-4 text-sm rounded-lg'></textarea>
+                    <textarea id = "text" rows = "7" cols = "24" ref = {textAreaRef} onChange = {textAreaChangeHandler} className = 'outline-none resize-none w-6/12 ml-5 p-4 text-sm rounded-lg'></textarea>
                 </div>
 
                 <div className = 'text-center'>
-                    <button type = 'submit' className = 'capitalize outline-none p-2 m-2 rounded-lg bg-slate-700 hover:bg-slate-800 transition-all text-white'>add quote</button>
+                    <button type = 'submit' disabled = {!formIsValid} className = 'capitalize disabled:bg-slate-500 disabled:cursor-not-allowed outline-none p-2 m-2 rounded-lg bg-slate-700 hover:bg-slate-800 transition-all text-white'>add quote</button>
                 </div>
             </form>     
         </>
