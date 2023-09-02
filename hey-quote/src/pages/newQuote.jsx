@@ -1,9 +1,12 @@
 import React from 'react';
+import QuoteForm from '../components/quoteForm';
 
 const NewQuote = () => {
     return (
         <>
-            <h1>Hello world</h1>   
+            <div className = "flex flex-wrap justify-center items-center content-center h-96 mt-10">
+                <QuoteForm/>
+            </div>
         </>
     );
 };
