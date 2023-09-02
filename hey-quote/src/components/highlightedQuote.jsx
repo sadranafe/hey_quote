@@ -8,7 +8,7 @@ const HighlightedQuote = ({ author, text , time }) => {
     return (
         <>
             <div className = "bg-slate-700 text-white w-4/12 rounded-lg p-5 px-10 m-2 flex flex-wrap justify-center items-center relative">
-                <Link to = "/quotes" className = "text-2xl absolute top-2 left-2">
+                <Link to = "/quotes" className = "text-2xl absolute top-3 left-3">
                     <i className = "bx bx-left-arrow-alt"></i>
                 </Link>
 
@@ -26,7 +26,7 @@ const HighlightedQuote = ({ author, text , time }) => {
 
                     <div className = " w-full m-2 py-1">
                         <p className = "text-lg">
-                            <i className='bx bx-receipt'></i> : {text}
+                            <i className='bx bx-align-middle'></i> : {text}
                         </p>
                     </div>
 
