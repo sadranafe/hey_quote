@@ -31,7 +31,7 @@ const App = () => {
             </Route>
 
             <Route path = "/quotes/:quoteId">
-                <QuoteDetail/>
+                <QuoteDetail dummy_data = {DUMMY_DATA}/>
             </Route>
 
             <Route path = "/404">
