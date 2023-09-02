@@ -2,7 +2,7 @@ import { Route , Switch , Redirect } from "react-router-dom"
 
 import AllQuote from "./pages/allQuote"
 import QuoteDetail from "./pages/quoteDetail"
-// import NewQuote from "./pages/newQuote"
+import NewQuote from "./pages/newQuote"
 import NotFound from "./pages/notFound"
 import MainNavBar from "./components/mainNavBar"
 
@@ -23,7 +23,7 @@ const App = () => {
             </Route>
 
             <Route path = "/new-quote">
-                {/* <NewQuote/> */}
+                <NewQuote/>
             </Route>
 
             <Route path = "/quotes/:quoteId">
