@@ -9,11 +9,14 @@ import { useState } from "react"
 
 const App = () => {
   const [DUMMY_DATA , setDUMMY_DATA] = useState([])
+  const [isEmpty , setIsEmpty] = useState(true)
 
   const DUMMY_DATA_Handler = data => {
     setDUMMY_DATA(prevState => {
       return ([...prevState , data])
     })
+
+    setIsEmpty(false)
   }
 
   return (
@@ -23,7 +26,7 @@ const App = () => {
         <Switch>
             <Redirect from = "/" to = "/quotes" exact/>
             <Route path = "/quotes" exact>
-                <AllQuote dummy_data = {DUMMY_DATA}/>
+                <AllQuote dummy_data = {DUMMY_DATA} onIsEmpty = {isEmpty}/>
             </Route>
 
             <Route path = "/new-quote">
